@@ -1,0 +1,16 @@
+.home {
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f8f4ed;
+  text-align: center;
+}
+
+.home p {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+}
