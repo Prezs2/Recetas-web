@@ -2,12 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './index.css'
 import Navbar from './components/Navbar/Navbar'
+
 import Home from './pages/Home/Home'
-import Beef from './pages/Beef/Beef'
-import Pig from './pages/Pig/Pig'
-import Legumes from './pages/Legumes/Legumes'
+import Recipes from './pages/Recipes/Recipes'
+
+import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,9 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/beef" element={<Beef />} />
-        <Route path="/pig" element={<Pig />} />
-        <Route path="/legumes" element={<Legumes />} />
+        <Route path="/:category" element={<Recipes />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
