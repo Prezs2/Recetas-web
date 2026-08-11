@@ -6,7 +6,7 @@ function useRecipes(category) {
   const recipes = {
     beef: beefRecipes,
     pig: pigRecipes,
-    legumes: legumesRecipes
+    legumes: legumesRecipes,
   };
 
   return recipes[category] || [];

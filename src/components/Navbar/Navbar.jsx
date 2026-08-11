@@ -4,7 +4,6 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-
       <NavLink to="/" className="navbar__title">
         RECETAS WEB
       </NavLink>
@@ -14,7 +13,6 @@ function Navbar() {
         <NavLink to="/pig">PIG</NavLink>
         <NavLink to="/legumes">LEGUMES</NavLink>
       </div>
-
     </nav>
   );
 }
