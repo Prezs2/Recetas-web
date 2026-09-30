@@ -1,0 +1,20 @@
+.collection { scroll-margin-top: 25px; }
+.collection__heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding-top: 30px; border-top: 1px solid var(--border); }
+.collection h1, .collection h2 { font: 500 2.45rem var(--serif); margin: 12px 0; letter-spacing: -.9px; }
+.collection__heading p { color: var(--muted); font-size: .86rem; margin: 0; line-height: 1.7; }
+.collection__count { color: var(--muted); font-size: .75rem; padding-bottom: 4px; white-space: nowrap; }
+.collection__tools { display: flex; gap: 20px; justify-content: space-between; align-items: center; margin-top: 29px; }
+.category-filters { display: flex; gap: 9px; flex-wrap: wrap; }
+.category-filters a { display: flex; gap: 8px; align-items: center; text-decoration: none; color: var(--muted); background: var(--white); border: 1px solid var(--border); padding: 11px 18px; border-radius: 30px; font-size: .8rem; }
+.category-filters a.selected { color: white; background: var(--olive); border-color: var(--olive); }
+.search-field { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1px solid var(--border); border-radius: 30px; background: var(--white); color: var(--muted); width: 315px; }
+.search-field input { width: 100%; min-width: 0; background: transparent; border: 0; outline: none; color: var(--ink); font: .78rem var(--sans); }
+.search-field:focus-within { outline: 2px solid var(--olive); outline-offset: 2px; }
+.collection__results { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: var(--muted); font-size: .72rem; margin: 26px 0 19px; }
+.collection__results select { background: transparent; color: var(--ink); border: 0; font: inherit; margin-left: 5px; max-width: 145px; padding: 6px 0; }
+.recipe-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
+.empty-state { text-align: center; padding: 70px 20px; color: var(--muted); }
+.empty-state h1, .empty-state h3 { color: var(--ink); font-family: var(--serif); }
+.category-page { padding-top: 30px; padding-bottom: 70px; }
+@media (max-width: 900px) { .recipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .collection__tools { flex-wrap: wrap; } .search-field { width: 100%; } }
+@media (max-width: 600px) { .recipe-grid { grid-template-columns: 1fr; gap: 20px; } .collection__heading { align-items: start; flex-direction: column; gap: 10px; } .collection h2 { font-size: 2rem; } .category-filters { gap: 7px; } .category-filters a { padding: 10px 14px; } .collection__results { align-items: flex-start; } .collection__results > span { max-width: 45%; overflow-wrap: anywhere; } .collection__results label { text-align: right; } }

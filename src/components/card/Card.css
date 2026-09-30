@@ -1,34 +1,15 @@
-.recipe-card {
-  width: 350px;
-
-  background-color: white;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.recipe-card__image {
-  width: 100%;
-  height: 220px;
-
-  object-fit: cover;
-}
-
-.recipe-card__content {
-  padding: 20px;
-}
-
-.recipe-card__content h2 {
-  margin-top: 0;
-}
-
-.recipe-card__content h3 {
-  margin-bottom: 8px;
-}
-
-.recipe-card__content ul {
-  padding-left: 20px;
-}
+.recipe-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.recipe-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px #37291c0c; }
+.recipe-card__link { display: block; height: 100%; color: inherit; text-decoration: none; }
+.recipe-card__visual { position: relative; overflow: hidden; aspect-ratio: 1.5; background: var(--cream); }
+.recipe-card__image { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.recipe-card:hover .recipe-card__image { transform: scale(1.04); }
+.recipe-card__badge { position: absolute; left: 16px; top: 16px; padding: 7px 12px; background: #fffdf5f2; border-radius: 30px; font-size: .75rem; font-weight: 700; }
+.recipe-card__content { padding: 23px; }
+.recipe-card__meta, .recipe-card__meta span, .recipe-card__bottom, .recipe-card__bottom span { display: flex; align-items: center; gap: 6px; }
+.recipe-card__meta { gap: 18px; font-size: .76rem; color: var(--muted); }
+.difficulty-dot::before { content: ''; width: 6px; height: 6px; background: var(--olive); border-radius: 50%; }
+.recipe-card h3 { font-family: var(--serif); font-size: 1.55rem; margin: 15px 0 9px; font-weight: 500; }
+.recipe-card p { font-size: .85rem; line-height: 1.7; color: var(--muted); margin: 0; min-height: 3.4em; }
+.recipe-card__bottom { border-top: 1px solid var(--border); margin-top: 22px; padding-top: 17px; justify-content: space-between; font-size: .75rem; color: var(--muted); }
+.recipe-card__action { color: var(--terracotta); font-weight: 700; }

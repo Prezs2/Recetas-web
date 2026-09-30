@@ -1,20 +1,19 @@
-import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import { NavLink, Link } from 'react-router-dom'
+import Icon from '../Icon/Icon'
+import { categories } from '../../data'
+import './Navbar.css'
 
-function Navbar() {
+export default function Navbar() {
   return (
-    <nav className="navbar">
-      <NavLink to="/" className="navbar__title">
-        RECETAS WEB
-      </NavLink>
-
-      <div className="navbar__links">
-        <NavLink to="/beef">BEEF</NavLink>
-        <NavLink to="/pig">PIG</NavLink>
-        <NavLink to="/legumes">LEGUMES</NavLink>
+    <header className="site-header">
+      <div className="navbar container">
+        <Link to="/" className="navbar__brand"><span className="brand-icon"><Icon name="chef" size={25} /></span><span>Entre <em>sabores</em><small>RECETAS PARA TODOS LOS DÍAS</small></span></Link>
+        <nav aria-label="Navegación principal" className="navbar__links">
+          <NavLink to="/" end>Todas las recetas</NavLink>
+          {categories.map((category) => <NavLink key={category.id} to={`/${category.id}`}>{category.name}</NavLink>)}
+        </nav>
+        <span className="navbar__note"><Icon name="leaf" size={17} /> Hecho en casa, sabe mejor</span>
       </div>
-    </nav>
-  );
+    </header>
+  )
 }
-
-export default Navbar;

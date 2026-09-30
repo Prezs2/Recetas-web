@@ -1,31 +1,23 @@
-import "./Card.css";
+import { Link } from 'react-router-dom'
+import Icon from '../Icon/Icon'
+import RecipeImage from '../RecipeImage/RecipeImage'
+import './Card.css'
 
-function Card({ recipe }) {
+export default function Card({ recipe }) {
   return (
     <article className="recipe-card">
-      <img
-        className="recipe-card__image"
-        src={recipe.image}
-        alt={recipe.name}
-      />
-
-      <div className="recipe-card__content">
-        <h2>{recipe.name}</h2>
-
-        <h3>Ingredientes</h3>
-
-        <ul>
-          {recipe.ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>
-
-        <h3>Preparación</h3>
-
-        <p>{recipe.preparation}</p>
-      </div>
+      <Link to={`/receta/${recipe.id}`} className="recipe-card__link" aria-label={`Ver receta de ${recipe.name}`}>
+        <div className="recipe-card__visual">
+          <RecipeImage className="recipe-card__image" src={recipe.image} alt={recipe.name} loading="lazy" />
+          <span className="recipe-card__badge">{recipe.category.icon} {recipe.category.name}</span>
+        </div>
+        <div className="recipe-card__content">
+          <div className="recipe-card__meta"><span><Icon name="clock" size={16} /> {recipe.time} min</span><span className="difficulty-dot">{recipe.difficulty}</span></div>
+          <h3>{recipe.name}</h3>
+          <p>{recipe.description}</p>
+          <div className="recipe-card__bottom"><span><Icon name="people" size={17} /> {recipe.servings} porciones</span><span className="recipe-card__action">Ver receta <Icon name="arrow" size={18} /></span></div>
+        </div>
+      </Link>
     </article>
-  );
+  )
 }
-
-export default Card;
